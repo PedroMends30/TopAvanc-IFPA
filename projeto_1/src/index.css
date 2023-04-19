@@ -1,5 +1,11 @@
+:root{
+    --century: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    --soehne: 'Soehne Breit Sans', sans-serif;
+}
+
 body{
     margin: 0px;
+    background-image: url("elétrica.png");
 }
 
 #navbar{
@@ -28,7 +34,10 @@ body{
 }
 
 #nav-ul li{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: var(--century);
+    font-size: small;
     list-style: none;
     padding: 0px 10px 0px 10px;
 }
@@ -39,9 +48,8 @@ body{
 }
 
 #nav-ul li a:hover{
-    color: #ffffff;
-    background-color:#00e0ff;
-    border-radius: 2px;
+    color: #000;
+    background-color:#ffffff;
 }
 
 #nav-links{
@@ -75,5 +83,26 @@ body{
 }
 
 #logo-text{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--century);
+    font-size: 1em;
+    margin: auto 10px;
+}
+
+#main-content-l{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#display-1{
+    font-family: var(--century);
+    font-size: 5em;
+    height: 100%;
+    color: #fff;
+    margin-left:auto;
+    margin-right:1em;
+}
+
+#title-detail{
+    color: #00e0ff;
 }
