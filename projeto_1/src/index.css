@@ -1,11 +1,14 @@
 :root{
     --century: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     --soehne: 'Soehne Breit Sans', sans-serif;
+    --main-blue: #00e0ff;
 }
 
 body{
     margin: 0px;
     background-image: url("elétrica.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #navbar{
@@ -96,13 +99,21 @@ body{
 
 #display-1{
     font-family: var(--century);
-    font-size: 5em;
-    height: 100%;
+    font-size: 4vw;
     color: #fff;
     margin-left:auto;
     margin-right:1em;
 }
 
 #title-detail{
-    color: #00e0ff;
+    color: var(--main-blue);
+}
+
+#form-box{
+    display: grid;
+    background-color: #fff;
+    padding: 10px;
+    max-width: fit-content;
+    margin-left: 3vw;
+    border-radius: 0.7em;
 }
