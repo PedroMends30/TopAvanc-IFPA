@@ -402,6 +402,10 @@ footer{
     border-radius: 0.7em;
 }
 
+#footer-logo{
+    filter: grayscale(1);
+}
+
 .author{
     font-size: smaller;
     text-align: center;
