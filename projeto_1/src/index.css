@@ -277,6 +277,26 @@ body::-webkit-scrollbar-thumb {
     border-radius: 0.7em;
 }
 
+.services-box {
+    font-family: var(--century);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 50vh;
+    margin-right: auto;
+    margin-left: 3vw;
+    border-radius: 0.7em;
+    margin-bottom: 100px;
+    box-sizing: border-box;
+    box-shadow: #000 0px 0px 10px;
+}
+
+.services-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7em;
+}
+
 #services-box-2 {
     font-family: var(--century);
     display: flex;
