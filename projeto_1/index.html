@@ -5,33 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="src/raio.png">
+    <link rel="icon" type="image/x-icon" href="src/img/raio.png">
     <link rel="stylesheet" href="src/index.css">
     <title>Engenheiro Elétrico</title>
 </head>
-
 <body>
     <nav id="navbar">
-        <div id="navigation">
+        <div id="navigation" tabindex="100">
             <a href="index.html">
                 <div id="logo-img">
                     <img src="src/raio.png" alt="raio" width="50px" height="50px">
                 </div>
             </a>
-            <div id="logo-text">ABC<br>Eng.&nbsp;Elétrica</div>
+            <div id="logo-text">Eng.&nbsp;Elétrica</div>
             <div id="nav-links">
                 <ul id="nav-ul">
                     <li>
-                        <div><a href="#" style="margin-right: 5px;">Contato</a></div>
+                        <div><a href="#contact" style="margin-right: 5px;">Contato</a></div>
                     </li>
                     <li>
-                        <div><a href="#section-2">Formação</a></div>
+                        <div><a href="#formation">Formação</a></div>
                     </li>
                     <li>
-                        <div><a href="#">Experiência</a></div>
+                        <div><a href="#services">Serviços</a></div>
                     </li>
                     <li>
-                        <div><a href="#nav-bar">Home</a></div>
+                        <div><a href="#main-cont">Home</a></div>
                     </li>
                 </ul>
             </div>
@@ -39,24 +38,104 @@
     </nav>
     <main id="main-cont">
         <div id="main-content-l">
-            <h1 id="display-1">A sua empresa de <br><span id="title-detail">Engenharia</span> Elétrica.</h1>
+            <h1 id="display-1"><span id="title-detail">Engenharia</span> Elétrica.</h1>
             <div id="form-box">
-                <h2 id="form-display">Faça um Orçamento conosco</span><h2>
+                <h2 id="form-display">Faça um Orçamento de Energia Solar<br>com um profissional.</h2>
                 <form action="" id="main-form">
-                    <input type="text" name="nome" id="name-form" placeholder="Nome">
-                    <input type="text" name="sobrenome" id="surname-form" placeholder="Sobrenome">
+                    <div id="name-surnaname"><input type="text" name="nome" id="name-form" placeholder="Nome">
+                        <input type="text" name="sobrenome" id="surname-form" placeholder="Sobrenome">
+                    </div>
+                    <div class="break"></div>
                     <input type="email" name="email" id="email-form" placeholder="Seu melhor email">
+                    <div class="break"></div>
                     <input type="text" name="telefone" id="phone-form" placeholder="Telefone">
-                    <input type="submit" value="Enviar" id="submit-button">
+                    <div class="break"></div>
+                    <input type="submit" value="Contatar Agora" id="submit-button">
                 </form>
             </div>
         </div>
-        <div id="main-content-r">
-        </div>
     </main>
-    <footer>
-
+    <section id="services">
+        <div id="services-content">
+            <div id="services-title">
+                <h2 id="services-display">Serviços</h2>
+            </div>
+            <div id="services-box">
+                <div id="services-box-1">
+                    <div id="services-box-1-img">
+                        <img src="src/renovavel.jpg" alt="raio" width="250px">
+                    </div>
+                    <div id="services-box-1-text">
+                        <h3 id="services-box-1-title">Desenvolvimento de Energia Renovável</h3>
+                        <p id="services-box-1-detail">Engenheiros elétricos desenvolvem soluções sustentáveis de
+                            energia, como painéis solares e turbinas eólicas, para atender às crescentes demandas por
+                            soluções renováveis e reduzir a pegada de carbono.</p>
+                    </div>
+                </div>
+                <div id="services-box-2">
+                    <div id="services-box-2-img">
+                        <img src="src/rede-ele.jpg" alt="raio" width="50px" height="50px">
+                    </div>
+                    <div id="services-box-2-text">
+                        <h3 id="services-box-2-title">Projeto de Sistemas Elétricos</h3>
+                        <p id="services-box-2-detail">Engenheiros elétricos são responsáveis por projetar sistemas
+                            elétricos seguros e eficientes, que atendam às necessidades específicas de edifícios
+                            residenciais, comerciais e industriais.</p>
+                    </div>
+                </div>
+                <div id="services-box-3">
+                    <div id="services-box-3-img">
+                        <img src="src/automacao.jpg" alt="raio" width="50px" height="50px">
+                    </div>
+                    <div id="services-box-3-text">
+                        <h3 id="services-box-3-title">Resolução de Problemas Elétricos</h3>
+                        <p id="services-box-3-detail">Engenheiros elétricos são especializados em identificar e
+                            solucionar problemas elétricos complexos em sistemas e equipamentos, usando ferramentas
+                            avançadas de diagnóstico e sua vasta experiência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="formation">
+        <div id="formation-content">
+            <div id="formation-title">
+                <h1 id="formation-display">Formação</h1>
+            </div>
+            <div id="formation-cont" tabindex="15">
+                <h1 class="formation-subtitle">Formação Necessária</h1>
+                <p class="formation-text">A formação necessária para se tornar um engenheiro elétrico é um curso
+                    superior em Engenharia Elétrica, que pode ser concluído em cerca de 5 anos em uma universidade
+                    reconhecida. Além disso, é comum que os estudantes de Engenharia Elétrica realizem estágios e
+                    trabalhos em projetos durante o curso, o que lhes proporciona uma experiência valiosa no campo.</p>
+                <h1 class="formation-subtitle">Formação Complementar</h1>
+                <p class="formation-text">Já as formações complementares podem ser obtidas por meio de cursos de
+                    pós-graduação, especializações e certificações em áreas relacionadas, como Engenharia de Controle e
+                    Automação, Engenharia Eletrônica, Engenharia de Telecomunicações, Engenharia de Energia, Engenharia
+                    de Computação, entre outras. Essas formações complementares podem ajudar o engenheiro elétrico a se
+                    especializar em áreas específicas da engenharia elétrica, aprimorar suas habilidades e conhecimentos
+                    e se manter atualizado sobre as últimas tecnologias e tendências do setor.</p>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div id="footer-content">
+            <div id="footer-logo">
+                <img src="src/raio.png" alt="logo" width="45px">
+            </div>
+            <div id="footer-text">
+                <h3 id="footer-text-1">Engenharia&nbsp;Elétrica</h3>
+                <p id="footer-text-2">Todos os direitos reservados</p>
+            </div>
+            <div id="contact-info">
+                <h3 id="contact-info-1">Contato</h3>
+                <p id="contact-info-2">+55 11 99999-9999</p>
+                <p id="contact-info-3">eletrica@engenharia.com</p>
+            </div>
+        </div>
+        <div id="author">
+            <p class="author">Criado&nbsp;por&nbsp;<a style="font-weight: bold;" href="https://github.com/pedromends30">Pedro&nbsp;Mendes</a></p>
+        </div>
     </footer>
 </body>
-
 </html>
