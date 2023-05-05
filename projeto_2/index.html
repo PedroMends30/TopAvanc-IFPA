@@ -1,12 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math.Util</title>
+    <title>Áreas dos Polígonos</title>
+    <style>
+        h2 {
+            margin-top: 10px;
+        }
+
+        :root {
+            --main-font: Century Gothic;
+        }
+
+        body {
+            font-family: var(--main-font);
+        }
+
+        .result {
+            margin-bottom: auto;
+        }
+
+        #calc {
+            display: flex;
+        }
+
+        .box-calc {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            border: #000 1px solid;
+            padding: 15px;
+            padding-top: 10px;
+            ;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        .box-calc input {
+            margin-bottom: 4px;
+        }
+
+        #void {
+            width: 100%;
+            height: 100px;
+        }
+
+        #circulo-canvas {
+            margin-top:20px;
+            width: 500px;
+            height: 400px;
+            border: #000 1px solid;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="void">
+    </div>
+    <div id="calc">
+        <!-- Círculo, Quadrado, Triângulo, Retangulo e Trapézio -->
+        <div class="box-calc" id="circulo">
+            <h2>Área do Círculo</h2>
+            <input type="number" placeholder="Raio do Círculo" id="raio"><br>
+            <input type="button" value="Calcular" onclick="calcCirculo()">
+
+            <h3 class="result">Resultado é: <span style="font-weight: normal;" id="result-circ"></span></h3>
+        </div>
+        <div class="box-calc" id="quadrado">
+            <h2>Área do Quadrado</h2>
+            <input type="number" placeholder="Lado do quadrado" id="lado-quad"><br>
+            <input type="button" value="Calcular" onclick="calcQuadrado()">
+            <h3 class="result">Resultado é: <span style="font-weight: normal;" id="result-quad"></span></h3>
+        </div>
+        <div class="box-calc" id="triangulo">
+            <h2>Área do Triângulo</h2>
+            <input type="number" id="base-tri" placeholder="Base do triângulo">
+            <input type="number" id="altura-tri" placeholder="Altura do triângulo"><br>
+            <input type="button" value="Calcular" onclick="calcTriangulo()">
+            <h3 class="result">Resultado é: <span style="font-weight: normal;" id="result-tri"></span></h3>
+        </div>
+        <div class="box-calc" id="retangulo">
+            <h2>Área do Retângulo</h2>
+            <input type="number" id="base-rect" placeholder="Base do Retângulo">
+            <input type="number" id="altura-rect" placeholder="Base do Retângulo"><br>
+            <input type="button" value="Calcular" onclick="calcRetangulo()">
+            <h3 class="result">Resultado é: <span style="font-weight: normal;" id="result-rect"></span></h3>
+        </div>
+        <div class="box-calc" id="trapezio">
+            <h2>Área do Trapézio</h2>
+            <input type="number" id="base-trap" placeholder="Base maior">
+            <input type="number" id="base-trap" placeholder="Base menor">
+            <input type="number" id="base-trap" placeholder="Altura"><br>
+            <input type="button" value="Calcular" onclick="calcTrapezio()">
+            <h3 class="result">Resultado é: <span style="font-weight: normal;" id="result-trap"></span></h3>
+        </div>
+    </div>
+    <script>
+        function calcCirculo() {
+            var raio = document.getElementById("raio").value;
+            var result = Math.PI * Math.pow(raio, 2);
+            document.getElementById("result-circ").innerHTML = result.toFixed(2);
+        }
+
+        function calcQuadrado() {
+            var lado = document.getElementById("lado-quad").value;
+            var result = Math.pow(lado, 2);
+            document.getElementById("result-quad").innerHTML = result.toFixed(2);
+        }
+
+        function calcTriangulo() {
+            var base = document.getElementById("base-tri").value;
+            var altura = document.getElementById("altura-tri").value;
+            var result = (base * altura) / 2;
+            document.getElementById("result-tri").innerHTML = result.toFixed(2);
+        }
+
+        function calcRetangulo() {
+            var base = document.getElementById("base-rect").value;
+            var altura = document.getElementById("altura-rect").value;
+            var result = base * altura;
+            document.getElementById("result-rect").innerHTML = result.toFixed(2);
+        }
+
+        function calcTrapezio() {
+            var baseMaior = document.getElementById("base-trap").value;
+            var baseMenor = document.getElementById("base-trap").value;
+            var altura = document.getElementById("base-trap").value;
+            var result = ((baseMaior + baseMenor) * altura) / 2;
+            document.getElementById("result-trap").innerHTML = result.toFixed(2);
+        }
+    </script>
 </body>
 </html>
