@@ -86,7 +86,7 @@
         <div class="box-calc" id="retangulo">
             <h2>Área do Retângulo</h2>
             <input type="number" id="base-rect" placeholder="Base do Retângulo">
-            <input type="number" id="altura-rect" placeholder="Base do Retângulo"><br>
+            <input type="number" id="altura-rect" placeholder="Lado do Retângulo"><br>
             <input type="button" value="Calcular" onclick="calcRetangulo()">
             <h3 class="result">Resultado é: <span style="font-weight: normal;" id="result-rect"></span></h3>
         </div>
@@ -130,7 +130,8 @@
             var baseMaior = document.getElementById("base-trap").value;
             var baseMenor = document.getElementById("base-trap").value;
             var altura = document.getElementById("base-trap").value;
-            var result = ((baseMaior + baseMenor) * altura) / 2;
+            var result = ((parseFloat(baseMaior) + parseFloat(baseMenor)) * parseFloat(altura)) / 2;
+            console.log("Resultado: "+result);
             document.getElementById("result-trap").innerHTML = result.toFixed(2);
         }
     </script>
