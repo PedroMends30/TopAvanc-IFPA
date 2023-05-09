@@ -50,7 +50,7 @@
         }
 
         #circulo-canvas {
-            margin-top:20px;
+            margin-top: 20px;
             width: 500px;
             height: 400px;
             border: #000 1px solid;
@@ -92,9 +92,9 @@
         </div>
         <div class="box-calc" id="trapezio">
             <h2>Área do Trapézio</h2>
-            <input type="number" id="base-trap" placeholder="Base maior">
-            <input type="number" id="base-trap" placeholder="Base menor">
-            <input type="number" id="base-trap" placeholder="Altura"><br>
+            <input type="number" id="baseM-trap" placeholder="Base maior">
+            <input type="number" id="basem-trap" placeholder="Base menor">
+            <input type="number" id="alt-trap" placeholder="Altura"><br>
             <input type="button" value="Calcular" onclick="calcTrapezio()">
             <h3 class="result">Resultado é: <span style="font-weight: normal;" id="result-trap"></span></h3>
         </div>
@@ -127,12 +127,64 @@
         }
 
         function calcTrapezio() {
-            var baseMaior = document.getElementById("base-trap").value;
-            var baseMenor = document.getElementById("base-trap").value;
-            var altura = document.getElementById("base-trap").value;
+            var baseMaior = parseFloat(document.getElementById("baseM-trap").value);
+            var baseMenor = parseFloat(document.getElementById("basem-trap").value);
+            var altura = parseFloat(document.getElementById("alt-trap").value);
             var result = ((baseMaior + baseMenor) * altura) / 2;
             document.getElementById("result-trap").innerHTML = result.toFixed(2);
         }
     </script>
 </body>
+
 </html>
+
+<table border="1px solid black">
+    <thead>
+        <td id="linha1"></td>
+        <td id="linha2"></td>
+        <td id="linha3"></td>
+        <td id="linha4"></td>
+    </thead>
+    <tr id="col_1">
+        <td id="line_1"></td>
+        <td id="line_2"></td>
+        <td id="line_3"></td>
+        <td id="line_4"></td>
+    </tr>
+    <tr id="col_2">
+        <td id="line_1"></td>
+        <td id="line_2"></td>
+        <td id="line_3"></td>
+        <td id="line_4"></td>
+    </tr>
+    <tr id="col_3">
+        <td id="line_1"></td>
+        <td id="line_2"></td>
+        <td id="line_3"></td>
+        <td id="line_4"></td>
+    </tr>
+    <tr id="col_4">
+        <td id="line_1"></td>
+        <td id="line_2"></td>
+        <td id="line_3"></td>
+        <td id="line_4"></td>
+    </tr>
+    <tr id="col_5">
+        <td id="line_1"></td>
+        <td id="line_2"></td>
+        <td id="line_3"></td>
+        <td id="line_4"></td>
+    </tr>
+    <tr id="col_6">
+        <td id="line_1"></td>
+        <td id="line_2"></td>
+        <td id="line_3"></td>
+        <td id="line_4"></td>
+    </tr>
+    <tr id="col_7">
+        <td id="line_1"></td>
+        <td id="line_2"></td>
+        <td id="line_3"></td>
+        <td id="line_4"></td>
+    </tr>
+</table>
