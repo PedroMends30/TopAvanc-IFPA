@@ -18,6 +18,11 @@
 
         }
 
+        th{
+            padding-left:7px;
+            padding-right:7px;
+        }
+
         table * {
             text-align: center;
             min-width: 40px;
@@ -43,21 +48,16 @@
             margin-left: auto;
             margin-right: auto;
             max-width: fit-content;
-        }
-
-        #content * {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        }        
         #display-1 {
             text-align: center;
         }
         
+
         #buttons {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
         }
 
@@ -81,6 +81,10 @@
         .add-sub {
             width: 40px;
         }
+
+        #button-action{
+            margin-left: auto;
+        }
     </style>
     <script>
 
@@ -99,7 +103,7 @@
             cont++;
             tabela = document.getElementById("tabela");
 
-            linha = '<tr id="l' + cont + '"><td id="l' + cont + '-c1">' + cont + '</td><td id="l' + cont + '-c2"><select id="l' + cont + '-c2-1" class="select-1"><option value="tacaca" class="options">Tacacá</option><option value="vatapa" class="options">Vatapá</option><option value="manicoba" class="options">Maniçoba</option><option value="acai" class="options">Açaí</option></select></td><td id="l' + cont + '-c3"><input id="l' + cont + '-c3-1" class="qtd" type="number" onblur="calcSubTotal(' + cont + ')" min="0" value="0"></td><td id="l' + cont + '-c4"><input id="l' + cont + '-c4-1" type="text" onblur="calcSubTotal(' + cont + ')" min="0" value="0"></td><td id="l' + cont + '-c5" class="sub-t">0</td></tr>';
+            linha = '<tr id="l' + cont + '"><td id="l' + cont + '-c1">' + cont + '</td><td id="l' + cont + '-c2"><select id="l' + cont + '-c2-1" class="select-1"><option value="tacaca" class="options">Tacacá</option><option value="vatapa" class="options">Vatapá</option><option value="manicoba" class="options">Maniçoba</option><option value="acai" class="options">Açaí</option></select></td><td id="l' + cont + '-c3"><input id="l' + cont + '-c3-1" class="qtd" type="number" onblur="calcSubTotal(' + cont + ')" min="0" placeholder="0"></td><td id="l' + cont + '-c4"><input id="l' + cont + '-c4-1" type="text" onblur="calcSubTotal(' + cont + ')" min="0" placeholder="0"></td><td id="l' + cont + '-c5" class="sub-t">0</td></tr>';
 
 
             tabela.insertAdjacentHTML('beforeend', linha);
@@ -167,9 +171,9 @@
                         <option value="acai" class="options">Açaí</option>
                     </select>
                 </td>
-                <td id="l1-c3"><input id="l1-c3-1" class="qtd" type="number" onblur="calcSubTotal(1)" min="0" value="0">
+                <td id="l1-c3"><input id="l1-c3-1" class="qtd" type="number" onblur="calcSubTotal(1)" min="0" placeholder="0">
                 </td>
-                <td id="l1-c4"><input id="l1-c4-1" type="text" onblur="calcSubTotal(1)" min="0" value="0"></td>
+                <td id="l1-c4"><input id="l1-c4-1" type="text" onblur="calcSubTotal(1)" min="0" placeholder="0"></td>
                 <td id="l1-c5" class="sub-t">0</td>
             </tr>
         </table>
