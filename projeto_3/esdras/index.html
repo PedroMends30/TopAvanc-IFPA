@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comanda</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        // variável para controlar a quantidade de linhas da tabela
+        qntLinhas = 1;
+
+
+        // Vetor para armazenar o subtotal de cada linha
+        subtotais = [];
+
+
+        // função para calcular o subtotal de cada linha, passando qual linha será calculada por parâmetro
+        function calcularSubtotal(linha){
+
+            // pega o valor do preço e da quantidade da linha
+            var preco = document.getElementById("preco-" + linha).value;
+            var qnt = document.getElementById("qnt-" + linha).value;
+
+
+            // calcula o subtotal
+            var subtotal = preco * qnt;
+
+
+            // coloca o subtotal no campo subtotal da linha
+            document.getElementById("subtotal-" + linha).value = subtotal;
+
+
+            // armazena o subtotal no vetor de subtotais
+            subtotal[linha-1] = subtotal;
+            //obs: o índice do vetor é linha-1, porque o índice do vetor começa em 0, e o número da linha começa em 1
+        }
+
+
+        // função para calcular o total da comanda, somando subtotal de cada linha
+        function calcularTotal(){
+
+        }
+
+
+        // função para limpar a comanda
+        function limparComanda(){
+
+        }
+
+
+        // função para adicionar uma nova linha na tabela
+        function adicionarLinha(){
+
+        }
+
+
+        // função para remover uma linha da tabela
+        function removerLinha(){
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="letra">Comanda do Garçom</h1>
+    <table border="1px solid black">
+        <thead>
+            <th>#</th>
+            <th>Comida</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+        </thead>
+        <tr id="linha-1">
+            <td>
+                1
+            </td>
+            <td>
+                <select id="select1">
+                    <option value="">Hot-Dog</option>
+                    <option value="">Pizza</option>
+                    <option value="">Picanha</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" name="" id="preco-1" onblur="calcularSubtotal(1)">
+            </td>
+            <td>
+                <input type="number" name="" id="qnt-1" onblur="calcularSubtotal(1)">
+            </td>
+            <td>
+                <input type="text" name="" id="subtotal-1" class="subtotal" disabled>
+            </td>
+        </tr>
+    </table>
+<h1 id="total"></h1>
+    <hr>
+    <input type="button" value="Calcular Total" ondblclick="" >
+    <input type="button" value="Limpar Comanda">
+</body>
+
+</html>
