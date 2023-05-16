@@ -7,8 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comanda</title>
     <style>
-        table{
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            border: 1px solid rgb(5, 5, 114);
             border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th {
+            border: 1px solid #fff;
+            padding-left: 7px;
+            padding-right: 7px;
+            background-color: rgb(5, 5, 114);
+            color: #fff;
+        }
+
+        table * {
+            text-align: center;
+            min-width: 40px;
+            margin: 5px;
+        }
+
+        input[type=number],
+        input[type=text],
+        select {
+            border: none;
+        }
+
+        input,
+        select:focus {
+            outline: none;
+        }
+
+        input, select{
+            border: none;
+        }
+
+        #letra {
+            color: rgb(5, 5, 114);
+        }
+        
+        #tot-limp input{
+            margin:0 auto;
+            background-color: rgb(5, 5, 114) ;
+            color: #fff;
+        }
+
+        #btn-adc-sub {
+            display: flex;
+            justify-content: center;
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+
+        #btn-adc-sub input{
+            background-color: rgb(5, 5, 114) ;
+            color: #fff;
+            margin:0 10px;
+        }
+
+        #total{
+            color: rgb(5, 5, 114);
         }
     </style>
     <script>
@@ -20,50 +82,124 @@
         subtotais = [];
 
 
+        // função para adicionar uma nova linha na tabela
+        function adicionarLinha() {
+            // incrementa a quantidade de linhas
+            qntLinhas++;
+
+            // pega a tabela
+            var tabela = document.getElementsByTagName("table")[0];
+
+            // cria uma nova linha
+            var linha = tabela.insertRow(-1);
+
+            // coloca o id na linha
+            linha.setAttribute("id", "linha-" + qntLinhas);
+
+            // cria as células
+            var celula1 = linha.insertCell(0);
+            var celula2 = linha.insertCell(1);
+            var celula3 = linha.insertCell(2);
+            var celula4 = linha.insertCell(3);
+            var celula5 = linha.insertCell(4);
+
+            // coloca o conteúdo nas células
+            celula1.innerHTML = qntLinhas;
+
+
+            // obs: o id de cada elemento é composto pelo nome do elemento + o número da linha
+            celula2.innerHTML = "<select id='select" + qntLinhas + "'><option value=''>Hot-Dog</option><option value=''>Pizza</option><option value=''>Picanha</option></select>";
+            celula3.innerHTML = "<input type='text' name='' id='preco-" + qntLinhas + "' onblur='calcularSubtotal(" + qntLinhas + ")'>";
+            celula4.innerHTML = "<input type='number' name='' id='qnt-" + qntLinhas + "' onblur='calcularSubtotal(" + qntLinhas + ")'>";
+            celula5.innerHTML = "<input type='text' name='' id='subtotal-" + qntLinhas + "' disabled>";
+        }
+
+
+        // função para remover uma linha da tabela
+        function removerLinha() {
+            // pega a tabela
+            var tabela = document.getElementsByTagName("table")[0];
+
+            // pega a quantidade de linha da tabela;
+
+            // se tiver mais de uma linha
+            if (qntLinhas > 1) {
+                // remove a última linha
+                tabela.deleteRow(-1);
+
+                // decrementa a quantidade de linhas
+                qntLinhas--;
+            }
+        }
+
         // função para calcular o subtotal de cada linha, passando qual linha será calculada por parâmetro
-        function calcularSubtotal(linha){
+        function calcularSubtotal(linha) {
 
             // pega o valor do preço e da quantidade da linha
             var preco = document.getElementById("preco-" + linha).value;
             var qnt = document.getElementById("qnt-" + linha).value;
 
 
+            // troca a vírgula por ponto
+            preco = preco.replace(",", ".");
+
+
             // calcula o subtotal
             var subtotal = preco * qnt;
 
 
-            // coloca o subtotal no campo subtotal da linha
-            document.getElementById("subtotal-" + linha).value = subtotal;
+            // coloca o subtotal no campo subtotal da linha, formatando para duas casas decimais e trocando o ponto por vírgula
+            document.getElementById("subtotal-" + linha).value = subtotal.toFixed(2).replace(".", ",");
 
 
             // armazena o subtotal no vetor de subtotais
-            subtotal[linha-1] = subtotal;
+            subtotais[linha - 1] = subtotal;
             //obs: o índice do vetor é linha-1, porque o índice do vetor começa em 0, e o número da linha começa em 1
         }
 
 
         // função para calcular o total da comanda, somando subtotal de cada linha
-        function calcularTotal(){
+        function calcularTotal() {
+            // variável para armazenar o total
+            var total = 0;
 
+            // percorre o vetor de subtotais, somando cada subtotal
+            for (var i = 0; i < subtotais.length; i++) {
+                total += subtotais[i];
+            }
+
+            // formata o total para duas casas decimais e troca o ponto por vírgula
+            total = total.toFixed(2).replace(".", ",");
+
+            // coloca o total na tela
+            document.getElementById("total").innerHTML = "Total: R$: " + total;
         }
 
 
         // função para limpar a comanda
-        function limparComanda(){
+        function limparComanda() {
+            // percorre a tabela removendo as linhas até sobrar apenas uma
+            for (var i = qntLinhas; i > 1; i--) {
+                removerLinha();
+            }
 
+            // limpa o preço e a quantidade da primeira linha
+            document.getElementById("preco-1").value = "";
+            document.getElementById("qnt-1").value = "";
+
+            // limpa o subtotal da primeira linha
+            document.getElementById("subtotal-1").value = "";
+
+            // limpa o total
+            document.getElementById("total").innerHTML = "";
+
+            // zera o vetor de subtotais
+            subtotais = [];
+
+            // reseta a quantidade de linhas
+            qntLinhas = 1;
         }
 
-
-        // função para adicionar uma nova linha na tabela
-        function adicionarLinha(){
-
-        }
-
-
-        // função para remover uma linha da tabela
-        function removerLinha(){
-
-        }
     </script>
 </head>
 
@@ -89,20 +225,26 @@
                 </select>
             </td>
             <td>
-                <input type="text" name="" id="preco-1" onblur="calcularSubtotal(1)">
+                <input type="text" id="preco-1" onblur="calcularSubtotal(1)">
             </td>
             <td>
-                <input type="number" name="" id="qnt-1" onblur="calcularSubtotal(1)">
+                <input type="number" id="qnt-1" onblur="calcularSubtotal(1)">
             </td>
             <td>
-                <input type="text" name="" id="subtotal-1" class="subtotal" disabled>
+                <input type="text" id="subtotal-1" class="subtotal" disabled>
             </td>
         </tr>
     </table>
-<h1 id="total"></h1>
+    <div id="btn-adc-sub">
+        <input type="button" value="Adicionar Linha" onclick="adicionarLinha()">
+        <input type="button" value="Remover Linha" onclick="removerLinha()">
+    </div>
+    <h1 id="total"></h1>
     <hr>
-    <input type="button" value="Calcular Total" ondblclick="" >
-    <input type="button" value="Limpar Comanda">
+    <div id="tot-limp">
+        <input type="button" value="Calcular Total" onclick="calcularTotal()">
+        <input type="button" value="Limpar Comanda" onclick="limparComanda()">
+    </div>
 </body>
 
 </html>
