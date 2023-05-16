@@ -37,22 +37,27 @@
             border: none;
         }
 
+        select::-internal-list-box{
+            background-color: rgb(5, 5, 114);
+            color: #fff;
+        }
+
         input,
         select:focus {
             outline: none;
         }
 
-        input, select{
+        input {
             border: none;
         }
 
         #letra {
             color: rgb(5, 5, 114);
         }
-        
-        #tot-limp input{
-            margin:0 auto;
-            background-color: rgb(5, 5, 114) ;
+
+        #tot-limp input {
+            margin: 0 auto;
+            background-color: rgb(5, 5, 114);
             color: #fff;
         }
 
@@ -63,13 +68,13 @@
             margin: 0 auto;
         }
 
-        #btn-adc-sub input{
-            background-color: rgb(5, 5, 114) ;
+        #btn-adc-sub input {
+            background-color: rgb(5, 5, 114);
             color: #fff;
-            margin:0 10px;
+            margin: 0 10px;
         }
 
-        #total{
+        #total {
             color: rgb(5, 5, 114);
         }
     </style>
@@ -219,9 +224,17 @@
             </td>
             <td>
                 <select id="select1">
-                    <option value="">Hot-Dog</option>
-                    <option value="">Pizza</option>
-                    <option value="">Picanha</option>
+                    <optgroup label="Comidas">
+                        <option value="">Hot-Dog</option>
+                        <option value="">Pizza</option>
+                        <option value="">X-Burguer</option>
+                        <option value="">Coxinha</option>
+                    </optgroup>
+                    <optgroup label="Bebidas">
+                        <option value="">Milkshake</option>
+                        <option value="">Refrigerante</option>
+                        <option value="">Suco</option>
+                    </optgroup>
                 </select>
             </td>
             <td>

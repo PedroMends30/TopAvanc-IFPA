@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de Teste</title>
+    <script id="default" defer>
+        function setHtml(){
+            document.getElementById('conteudo').innerHTML = document.getElementById('html-text').value;
+        }
+
+        function setCSS(){
+            document.getElementById('estilo').innerHTML = document.getElementById('css-text').value;
+        }
+
+        function setJS(){
+            document.getElementById('user-script').innerHTML = document.getElementById('js-text').value;
+        }
+    </script>
+    <script id="user-script">
+
+    </script>
+    <style id="estilo">
+
+    </style>
+</head>
+<body>
+    <textarea name="" id="html-text" cols="30" rows="10" onblur="setHtml()"></textarea>
+    <textarea name="" id="css-text" cols="30" rows="10"></textarea>
+    <textarea name="" id="js-text" cols="30" rows="10"></textarea>
+    <div id="conteudo"></div>
+</body>
+</html>
