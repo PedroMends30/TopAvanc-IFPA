@@ -113,7 +113,7 @@
 
 
             // obs: o id de cada elemento é composto pelo nome do elemento + o número da linha
-            celula2.innerHTML = "<select id='select" + qntLinhas + "'><option value=''>Hot-Dog</option><option value=''>Pizza</option><option value=''>Picanha</option></select>";
+            celula2.innerHTML = '<select id="select'+qntLinhas+'"><optgroup label="Comidas"><option value="">Hot-Dog</option><option value="">Pizza</option><option value="">X-Burguer</option><option value="">Coxinha</option></optgroup><optgroup label="Bebidas"><option value="">Milkshake</option><option value="">Refrigerante</option><option value="">Suco</option></optgroup></select>'
             celula3.innerHTML = "<input type='text' name='' id='preco-" + qntLinhas + "' onblur='calcularSubtotal(" + qntLinhas + ")'>";
             celula4.innerHTML = "<input type='number' name='' id='qnt-" + qntLinhas + "' onblur='calcularSubtotal(" + qntLinhas + ")'>";
             celula5.innerHTML = "<input type='text' name='' id='subtotal-" + qntLinhas + "' disabled>";
