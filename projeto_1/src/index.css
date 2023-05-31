@@ -434,3 +434,10 @@ footer{
 #contact-info{
    margin-left: 60vw;
 }
+
+#login-btn{
+    background-color: #1b5aa4;
+    width: 60px;
+    height: 20px;
+    border-radius: 0.7em;
+}
