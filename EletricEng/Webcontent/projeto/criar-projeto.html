@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../root/src/index.css">
+    <title>Novo Projeto</title>
+    <style>
+        .right{
+            margin-left: auto;
+        }
+    </style>
+    <script src="valid.js"></script>
+</head>
+
+<body style="background-color: white;">
+    <nav id="navbar">
+        <div id="navigation" tabindex="100">
+            <a href="index.html">
+                <div id="logo-img">
+                    <img src="../root/src/raio.png" alt="raio" width="50px" height="50px">
+                </div>
+            </a>
+            <div id="logo-text">Eng.&nbsp;Elétrica</div>
+            <div id="nav-links">
+                <ul id="nav-ul">
+                    <li style="margin-right:15px">
+                        <div id="login-btn"><a href="../login/login.jsp">Login</a></div>
+                    </li>
+                    <li>
+                        <div><a href="../root/index.html" style="margin-right: 5px;">Contato</a></div>
+                    </li>
+                    <li>
+                        <div><a href="../root/index.html">Formação</a></div>
+                    </li>
+                    <li>
+                        <div><a href="../root/index.html">Serviços</a></div>
+                    </li>
+                    <li>
+                        <div><a href="../root/index.html">Home</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div>
+            <form action="" method="POST">
+                <label for="nome-prop">Nome:</label>
+                <input type="text" name="nome-prop" id="nome-prop">
+            </form>
+        </div>
+    </div>
+    <div style="margin-top: 100px;max-width: fit-content;margin-left: auto;margin-right: auto;border: 1px solid black;border-radius: 10px;padding: 10px;">
+        <form action="projectRps.jsp" method="post">
+            <label for="">Proprietario</label>
+            <input type="text" name="nome_proprietario" class="right"><br>
+            <label for="">Endereço</label>
+            <input type="text" name="endereco" id="" class="right"><br>
+            <label for="">Tipo de Sistema</label>
+            <select name="tipo" id="" class="right">
+                <option value="residencial">Residencial</option>
+                <option value="comercial">Comercial</option>
+                <option value="industrial">Industrial</option>
+            </select><br>
+            <label for="">Local de Instalação</label>
+            <select name="local_instalacao" id="" class="right">
+                <option value="terraco">Terraço</option>
+                <option value="telhado">Telhado</option>
+                <option value="solo">Solo</option>
+            </select><br>
+            <label for="">Potência</label>
+            <input type="text" name="potencia_sistema" id="" class="right"><br>
+            <label for="">Data</label>
+            <input type="date" name="data" id="" class="right"><br>
+            <label for="">Valor</label>
+            <input type="text" name="preco_estimado" id="valor" onblur="comma()" class="right"><br>
+            <input type="submit" value="Solicitar">
+        </form>
+    </div>
+</body>
+
+</html>
